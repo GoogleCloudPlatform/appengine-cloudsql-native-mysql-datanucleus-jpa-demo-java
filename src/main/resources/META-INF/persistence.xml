@@ -14,33 +14,6 @@
       <property name="javax.persistence.jdbc.user" value="root" />
       <property name="javax.persistence.jdbc.password" value="r00t" />
       <property name="datanucleus.autoCreateSchema" value="true"/>
-
-      <!--all tables+columns are created as UPPERCASE COLUMN- and TABLE-NAMES, which is a little loud
-      - didn't recognize existing tables (from hibernate-only non-prod example)
-      this doesn't do anything.
-      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
-      -->
-
-      <!--
-      options to break up the datanucleus.autoCreateSchema (catch-all-true) above
-       datanucleus.autoCreateTables
-       datanucleus.autoCreateColumns
-       datanucleus.autoCreateConstraints
-      -->
-
-      <!--
-      in prod i get:
-
-    14:34:54.964
-    org.datanucleus.Configuration setProperty: Property hibernate.hbm2ddl.auto unknown - will be ignored (Configuration.java:526)
-    14:34:54.965
-    org.datanucleus.Configuration setProperty: Property hibernate.show_sql unknown - will be ignored (Configuration.java:526)
-
-      <property name="hibernate.show_sql" value="true" />
-      <property name="hibernate.hbm2ddl.auto" value="update" />
-      <property name="datanucleus.autoCreateSchema" value="true"/>
-      <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.EJB3NamingStrategy" />
-      -->
     </properties>
 
   </persistence-unit>
