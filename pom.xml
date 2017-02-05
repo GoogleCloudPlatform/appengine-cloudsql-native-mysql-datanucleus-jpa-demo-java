@@ -10,11 +10,11 @@
 
   <properties>
     <appengine.app.appId>your-app-id</appengine.app.appId>
-    <appengine.app.version>1-test-jpa-2</appengine.app.version>
+    <appengine.app.version>1</appengine.app.version>
     <appengine.target.version>1.9.48</appengine.target.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!--<cloudsql.url>jdbc:google:mysql://your-instance-name/demo?user=root</cloudsql.url>
-    <cloudsql.url.dev>jdbc:mysql://localhost/demo?user=root</cloudsql.url.dev>-->
+    <cloudsql.url>jdbc:google:mysql://your-instance-name/demo</cloudsql.url>
+    <cloudsql.url.dev>jdbc:mysql://localhost/demo</cloudsql.url.dev>
   </properties>
 
   <dependencies>

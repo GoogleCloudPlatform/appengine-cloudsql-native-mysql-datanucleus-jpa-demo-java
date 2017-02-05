@@ -6,8 +6,8 @@
   <use-google-connector-j>true</use-google-connector-j>
 
   <system-properties>
-    <!--<property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>-->
-    <property name="java.util.logging.config.file" value="WEB-INF/classes/log4j.properties"/>
-    <property name="cloudsql.url.dev" value="jdbc:mysql://localhost/demo"/>
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+    <property name="cloudsql.url" value="${cloudsql.url}"/>
+    <property name="cloudsql.url.dev" value="${cloudsql.url.dev}"/>
   </system-properties>
 </appengine-web-app>
