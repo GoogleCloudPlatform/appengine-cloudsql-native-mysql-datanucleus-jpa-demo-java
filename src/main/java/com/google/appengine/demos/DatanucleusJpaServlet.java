@@ -31,12 +31,6 @@ public class DatanucleusJpaServlet extends HttpServlet {
 
     // Insert a few rows.
     em.getTransaction().begin();
-
-    Greeting first_greeting = em.find(Greeting.class,1);
-    if(first_greeting!=null) {
-      first_greeting.setAuthor("author123");
-    }
-
     em.persist(new Greeting("user", new Date(), "Hello!"));
     em.persist(new Greeting("user", new Date(), "Hi!"));
     em.getTransaction().commit();
