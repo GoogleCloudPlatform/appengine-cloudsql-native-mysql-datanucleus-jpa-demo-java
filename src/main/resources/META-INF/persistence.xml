@@ -12,6 +12,8 @@
 
     <properties>
       <property name="javax.persistence.jdbc.user" value="root" />
+      <!-- this is required if you're connecting to a 2nd generation cloud-sql db -->
+      <property name="javax.persistence.jdbc.password" value="rootpassword" />
       <property name="datanucleus.autoCreateSchema" value="true"/>
     </properties>
 

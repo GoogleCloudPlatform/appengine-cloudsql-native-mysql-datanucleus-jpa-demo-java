@@ -16,16 +16,10 @@
 
 package com.google.appengine.demos;
 
-import com.google.appengine.api.utils.SystemProperty;
-
 import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.http.*;
 
 public class DatanucleusJpaServlet extends HttpServlet {
@@ -33,25 +27,9 @@ public class DatanucleusJpaServlet extends HttpServlet {
       throws IOException {
     res.setContentType("text/plain");
 
-    Map<String, String> properties = new HashMap();
-    if (SystemProperty.environment.value() ==
-          SystemProperty.Environment.Value.Production) {
-      properties.put("javax.persistence.jdbc.driver",
-          "com.mysql.jdbc.GoogleDriver");
-      properties.put("javax.persistence.jdbc.url",
-          System.getProperty("cloudsql.url"));
-    } else {
-      properties.put("javax.persistence.jdbc.driver",
-          "com.mysql.jdbc.Driver");
-      properties.put("javax.persistence.jdbc.url",
-          System.getProperty("cloudsql.url.dev"));
-    }
-
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory(
-        "Demo", properties);
+    EntityManager em = EMF.get().createEntityManager();
 
     // Insert a few rows.
-    EntityManager em = emf.createEntityManager();
     em.getTransaction().begin();
     em.persist(new Greeting("user", new Date(), "Hello!"));
     em.persist(new Greeting("user", new Date(), "Hi!"));
@@ -59,7 +37,7 @@ public class DatanucleusJpaServlet extends HttpServlet {
     em.close();
 
     // List all the rows.
-    em = emf.createEntityManager();
+    em = EMF.get().createEntityManager();
     em.getTransaction().begin();
     List<Greeting> result = em
         .createQuery("SELECT g FROM Greeting g")
