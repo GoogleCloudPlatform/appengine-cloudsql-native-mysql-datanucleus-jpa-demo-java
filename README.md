@@ -1,3 +1,7 @@
+![status: inactive](https://img.shields.io/badge/status-inactive-red.svg)
+
+This project is no longer actively developed or maintained.
+
 ## Google Cloud SQL/App Engine native DataNucleus JPA demo
 
 This demo contains an example program that shows how to use [DataNucleus](http://www.datanucleus.org/) [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API) with native MySQL connections to connect from [Google App Engine](https://developers.google.com/appengine/) to [Google Cloud SQL](https://developers.google.com/cloud-sql) both in development mode and on App Engine.
